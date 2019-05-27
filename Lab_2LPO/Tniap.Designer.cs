@@ -39,10 +39,10 @@
             this.Square = new System.Windows.Forms.PictureBox();
             this.Line = new System.Windows.Forms.PictureBox();
             this.Circle = new System.Windows.Forms.PictureBox();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.открытьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.сохранитьКакToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.SaveHaw = new System.Windows.Forms.ToolStripMenuItem();
             this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.FieldDrawing = new System.Windows.Forms.PictureBox();
@@ -61,7 +61,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.Square)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Line)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Circle)).BeginInit();
-            this.menuStrip1.SuspendLayout();
+            this.menuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FieldDrawing)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Width)).BeginInit();
             this.SuspendLayout();
@@ -174,22 +174,22 @@
             this.Circle.TabStop = false;
             this.Circle.Click += new System.EventHandler(this.Circle_Click);
             // 
-            // menuStrip1
+            // menuStrip
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.файлToolStripMenuItem,
             this.оПрограммеToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(884, 24);
-            this.menuStrip1.TabIndex = 3;
-            this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip.Name = "menuStrip";
+            this.menuStrip.Size = new System.Drawing.Size(884, 24);
+            this.menuStrip.TabIndex = 3;
+            this.menuStrip.Text = "menuStrip1";
             // 
             // файлToolStripMenuItem
             // 
             this.файлToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.открытьToolStripMenuItem,
-            this.сохранитьКакToolStripMenuItem,
+            this.SaveHaw,
             this.выходToolStripMenuItem});
             this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
             this.файлToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
@@ -200,13 +200,14 @@
             this.открытьToolStripMenuItem.Name = "открытьToolStripMenuItem";
             this.открытьToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.открытьToolStripMenuItem.Text = "Открыть";
-            this.открытьToolStripMenuItem.Click += new System.EventHandler(this.открытьToolStripMenuItem_Click);
+            this.открытьToolStripMenuItem.Click += new System.EventHandler(this.OpenFile_Click);
             // 
-            // сохранитьКакToolStripMenuItem
+            // SaveHaw
             // 
-            this.сохранитьКакToolStripMenuItem.Name = "сохранитьКакToolStripMenuItem";
-            this.сохранитьКакToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
-            this.сохранитьКакToolStripMenuItem.Text = "Сохранить как...";
+            this.SaveHaw.Name = "SaveHaw";
+            this.SaveHaw.Size = new System.Drawing.Size(162, 22);
+            this.SaveHaw.Text = "Сохранить как...";
+            this.SaveHaw.Click += new System.EventHandler(this.SaveHaw_Click);
             // 
             // выходToolStripMenuItem
             // 
@@ -247,7 +248,7 @@
             // 
             // Open
             // 
-            this.Open.FileName = "openFileDialog1";
+            this.Open.FileName = "OpenFile";
             // 
             // Cleare
             // 
@@ -271,7 +272,7 @@
             this.Fill.TabIndex = 5;
             this.Fill.Click += new System.EventHandler(this.Fill_Click);
             // 
-            // Form1
+            // Tniap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -283,9 +284,9 @@
             this.Controls.Add(this.FieldDrawing);
             this.Controls.Add(this.FieldFigure);
             this.Controls.Add(this.FieldColour);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Form1";
+            this.Controls.Add(this.menuStrip);
+            this.MainMenuStrip = this.menuStrip;
+            this.Name = "Tniap";
             this.Text = "Tniap";
             this.FieldColour.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ColourBlack)).EndInit();
@@ -297,8 +298,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.Square)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Line)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Circle)).EndInit();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.menuStrip.ResumeLayout(false);
+            this.menuStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FieldDrawing)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Width)).EndInit();
             this.ResumeLayout(false);
@@ -318,10 +319,10 @@
         private System.Windows.Forms.PictureBox Square;
         private System.Windows.Forms.PictureBox Line;
         private System.Windows.Forms.PictureBox Circle;
-        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.MenuStrip menuStrip;
         private System.Windows.Forms.ToolStripMenuItem файлToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem открытьToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem сохранитьКакToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem SaveHaw;
         private System.Windows.Forms.ToolStripMenuItem выходToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem оПрограммеToolStripMenuItem;
         private System.Windows.Forms.PictureBox FieldDrawing;

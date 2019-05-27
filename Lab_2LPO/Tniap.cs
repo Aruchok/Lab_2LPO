@@ -79,7 +79,6 @@ namespace Lab_2LPO
         }
 
 
-
         private void Cleare_Click(object sender, EventArgs e)
         {
             g.Clear(Color.White);
@@ -87,13 +86,14 @@ namespace Lab_2LPO
             //    for (int j = 0; j < pic.Height; j++)
             //        pic.SetPixel(i, j, Color.White);
             FieldDrawing.Image = pic;
+            FieldDrawing.Update();
         }
 
 
 
         private void FieldDrawing_MouseUp(object sender, MouseEventArgs e)
         {
-
+            g = Graphics.FromImage(pic);
             if (mode == type.Square)
             {
                 g.DrawRectangle(pen, x, y, Math.Abs(e.X - xCl), Math.Abs(e.Y - yCl));
@@ -118,7 +118,7 @@ namespace Lab_2LPO
             pen.Width = Width.Value;
             pen.StartCap = System.Drawing.Drawing2D.LineCap.Round;
             pen.EndCap = System.Drawing.Drawing2D.LineCap.Round;
-
+           
             if (e.Button == MouseButtons.Left)
             {
                 if (mode == type.Line)
@@ -151,23 +151,23 @@ namespace Lab_2LPO
             y1 = e.Y;
         }
 
-        private void сохранитьToolStripMenuItem_Click(object sender, EventArgs e)
+        private void SaveHaw_Click(object sender, EventArgs e)
         {
             Save.ShowDialog();
             if (Save.FileName != "")
             {
                 pic.Save(Save.FileName);
             }
-
         }
 
-        private void открытьToolStripMenuItem_Click(object sender, EventArgs e)
+        private void OpenFile_Click(object sender, EventArgs e)
         {
             Open.ShowDialog();
             if (Open.FileName != "")
             {
                 pic = (Bitmap)Image.FromFile(Open.FileName);
                 FieldDrawing.Image = pic;
+                FieldDrawing.Update();
             }
         }
     }
