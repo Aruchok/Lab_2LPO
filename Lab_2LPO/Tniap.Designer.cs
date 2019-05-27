@@ -181,7 +181,7 @@
             this.оПрограммеToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(884, 24);
+            this.menuStrip.Size = new System.Drawing.Size(1365, 24);
             this.menuStrip.TabIndex = 3;
             this.menuStrip.Text = "menuStrip1";
             // 
@@ -223,10 +223,11 @@
             // 
             // FieldDrawing
             // 
-            this.FieldDrawing.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.FieldDrawing.Location = new System.Drawing.Point(0, 98);
+            this.FieldDrawing.BackColor = System.Drawing.Color.White;
+            this.FieldDrawing.Location = new System.Drawing.Point(0, 95);
+            this.FieldDrawing.MaximumSize = new System.Drawing.Size(1500, 1000);
             this.FieldDrawing.Name = "FieldDrawing";
-            this.FieldDrawing.Size = new System.Drawing.Size(884, 313);
+            this.FieldDrawing.Size = new System.Drawing.Size(1365, 619);
             this.FieldDrawing.TabIndex = 4;
             this.FieldDrawing.TabStop = false;
             this.FieldDrawing.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FieldDrawing_MouseDown);
@@ -276,7 +277,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.AutoScroll = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.ClientSize = new System.Drawing.Size(884, 411);
             this.Controls.Add(this.Fill);
             this.Controls.Add(this.Cleare);
@@ -286,6 +289,7 @@
             this.Controls.Add(this.FieldColour);
             this.Controls.Add(this.menuStrip);
             this.MainMenuStrip = this.menuStrip;
+            this.MinimumSize = new System.Drawing.Size(900, 450);
             this.Name = "Tniap";
             this.Text = "Tniap";
             this.FieldColour.ResumeLayout(false);

@@ -10,7 +10,8 @@ using System.Windows.Forms;
 
 namespace Lab_2LPO
 {
-    enum type
+    //FlowlayoutPanel
+    enum Type
     {
         Line,
         Square,
@@ -25,18 +26,18 @@ namespace Lab_2LPO
 
         int x1, y1, yCl, xCl;
         int x, y, count = 0;
-        type mode;
+        Type mode;
 
         public Tniap()
         {
-            mode = type.Line;
+            mode = Type.Line;
             InitializeComponent();
 
             g = FieldDrawing.CreateGraphics();
             gTemporary = FieldDrawing.CreateGraphics();
 
-            pic = new Bitmap(884, 313);
-            picTemporary = new Bitmap(884, 313);
+            pic = new Bitmap(1500, 1500);
+            picTemporary = new Bitmap(1500, 1500);
 
             pen = new Pen(Color.Black, 5);
 
@@ -57,17 +58,17 @@ namespace Lab_2LPO
 
         private void Square_Click(object sender, EventArgs e)
         {
-            mode = type.Square;
+            mode = Type.Square;
         }
 
         private void Circle_Click(object sender, EventArgs e)
         {
-            mode = type.Circle;
+            mode = Type.Circle;
         }
 
         private void Line_Click(object sender, EventArgs e)
         {
-            mode = type.Line;
+            mode = Type.Line;
         }
 
         private void Fill_Click(object sender, EventArgs e)
@@ -94,13 +95,13 @@ namespace Lab_2LPO
         private void FieldDrawing_MouseUp(object sender, MouseEventArgs e)
         {
             g = Graphics.FromImage(pic);
-            if (mode == type.Square)
+            if (mode == Type.Square)
             {
                 g.DrawRectangle(pen, x, y, Math.Abs(e.X - xCl), Math.Abs(e.Y - yCl));
                 FieldDrawing.Image = pic;
             }
 
-            if (mode == type.Circle)
+            if (mode == Type.Circle)
             {
                 g.DrawEllipse(pen, xCl, yCl, e.X - xCl, e.Y - yCl);
                 FieldDrawing.Image = pic;
@@ -121,13 +122,13 @@ namespace Lab_2LPO
            
             if (e.Button == MouseButtons.Left)
             {
-                if (mode == type.Line)
+                if (mode == Type.Line)
                 {
                     g.DrawLine(pen, x1, y1, e.X, e.Y);
                     FieldDrawing.Image = pic;
                 }
 
-                if (mode == type.Square)
+                if (mode == Type.Square)
                 {
                     gTemporary.Clear(Color.White);                    
                     x = xCl;
@@ -139,7 +140,7 @@ namespace Lab_2LPO
                     FieldDrawing.Image = picTemporary;
                 }
 
-                if (mode == type.Circle)
+                if (mode == Type.Circle)
                 {
                     gTemporary.Clear(Color.White);
                     gTemporary.DrawEllipse(pen, xCl, yCl, e.X - xCl, e.Y - yCl);
